@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Get Help | madad.pk{% endblock %}
+
+{% block content %}
+    <h2>Want some help?</h2>
+    <p>Please fill out this form below to request help from a service provider.</p>
+
+    <form class="help-form" action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <label for="service"> Choose a service </label>
+        <select id="service" name="service" onchange="toggleOtherInput()">
+            <option value=""> SELECT </option>
+            <option value="Electrician">Electrician</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Cleaner">Cleaner</option>
+            <option value="Other">Other (not specified) </option>
+        </select>
+        <div id="other-service-container" style="display: none;">
+            <input type="text" id="other-service" name="other_service" placeholder="Please specify the service you need">
+        </div>
+        <input type="text" name="phone" placeholder="Your Phone Number" required>
+        <input type="text" name="email" placeholder="Email (optional)">
+        <input type="text" name="address" placeholder="Your address" required>
+        <input type="text" name="details" placeholder="Describe the problem" required>
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <p>Please be informed that if any detail is missing or incorrect, then your request will not be entertained.</p>
+{% endblock %}

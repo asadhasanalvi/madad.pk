@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard | Madad.pk{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2>📋 All Service Requests</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert-success">
+              {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% if submissions %}
+    <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse: collapse; margin-top: 2rem;">
+            <thead style="background-color: var(--matte-blue); color: white;">
+                <tr>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Service</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Phone</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Address</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Details</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                <tr style="background-color: white;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.name }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.service }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.phone }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.email }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.address }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.details }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ submission.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No service requests found.</p>
+    {% endif %}
+</div>
+{% endblock %}

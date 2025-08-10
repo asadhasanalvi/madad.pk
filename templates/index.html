@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | madad.pk{% endblock %}
+
+{% block content %}
+   {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert-success">
+          {{ messages[0] }}
+        </div>
+      {% endif %}
+    {% endwith %}
+    
+    <img src="{{ url_for('static', filename='homepage.jpg') }}" alt="madad.pk banner" style="max-width:40%; height:auto; display:block; margin:0 auto;">
+
+    <h1>WELCOME!</h1>
+    <h2>Your platform to request help from electricians, plumbers and many more!</h2>
+    <a class="cta-button" href="/help">Request Help</a>
+{% endblock %}

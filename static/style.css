@@ -1,0 +1,153 @@
+/* === Color Theme === */
+:root {
+    --matte-blue: #2C3E50;     /* Dark matte blue */
+    --light-blue: #ECF0F1;     /* Soft light background */
+    --highlight: #3498DB;      /* Accent blue */
+    --text-dark: #2C3E50;
+    --text-light: #ffffff;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* === General Reset & Font === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--light-blue);
+    color: var(--text-dark);
+}
+
+/* === Navbar Styling === */
+.navbar {
+    background-color: var(--matte-blue);
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-light);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--highlight);
+}
+
+/* === Main Content === */
+.main-content {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--light-blue);
+}
+
+.main-content h2 {
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    background-color: var(--highlight);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2980B9;
+}
+
+.help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.help-form input,
+.help-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.help-form button {
+    background-color: var(--highlight);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.help-form button:hover {
+    background-color: #2980B9;
+}
+
+.help-form select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#other-service-container input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
