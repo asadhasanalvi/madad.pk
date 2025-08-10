@@ -36,7 +36,8 @@ Many people in Pakistan struggle to find **reliable, verified help** for everyda
 
 ## Screenshots
 
-> *To Be Added
+![Homepage](screenshots/home.png)
+![Service Page](screenshots/help.png)
 
 ---
 
